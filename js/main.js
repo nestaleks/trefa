@@ -1,6 +1,6 @@
 // мобільне меню
 const menuBtn = document.querySelector('.menu__btn');
-const menuList = document.querySelector('.menu__list');
+const menuList = document.querySelector('.header__inner-right');
 const menuClose = document.querySelector('.menu__close');
 
 menuBtn.addEventListener('click', ()=>{
@@ -11,13 +11,13 @@ menuClose.addEventListener('click', ()=>{
 });
 
 //закриття бургера після кліку на посилання
-// $('.menu__btn').on('click', function () {
-// 	$('.menu__list').addClass('menu--open');
-//   });
+$('.menu__btn').on('click', function () {
+	$('.menu__list').addClass('menu--open');
+  });
   
-//   $( '.menu__link' ).on("click", function(){
-// 	$('.menu__list').removeClass('menu--open');
-//   });
+  $( '.menu__link' ).on("click", function(){
+	$('.menu__list').removeClass('menu--open');
+  });
 
 
 
