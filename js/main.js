@@ -49,30 +49,26 @@ icons.forEach (icon => {
 
 
 
-function resizeGridItem(item){
-  grid = document.getElementsByClassName("grid")[0];
-  rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-  rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-  rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-    item.style.gridRowEnd = "span "+rowSpan;
-}
-
-function resizeAllGridItems(){
-  allItems = document.getElementsByClassName("item");
-  for(x=0;x<allItems.length;x++){
-    resizeGridItem(allItems[x]);
-  }
-}
-
-function resizeInstance(instance){
-	item = instance.elements[0];
-  resizeGridItem(item);
-}
-
-window.onload = resizeAllGridItems();
-window.addEventListener("resize", resizeAllGridItems);
-
-allItems = document.getElementsByClassName("item");
-for(x=0;x<allItems.length;x++){
-  imagesLoaded( allItems[x], resizeInstance);
-}
+FlexMasonry.init('.gallery', {
+  /*
+   * If `responsive` is `true`, `breakpointCols` will be used to determine
+   * how many columns a grid should have at a given responsive breakpoint.
+   */
+  responsive: true,
+  /*
+   * A list of how many columns should be shown at different responsive
+   * breakpoints, defined by media queries.
+   */
+  breakpointCols: {
+      'min-width: 1500px': 6,
+      'min-width: 1200px': 5,
+      'min-width: 992px': 4,
+      'min-width: 768px': 3,
+      'min-width: 576px': 2,
+  },
+  /*
+   * If `responsive` is `false`, this number of columns will always be shown,
+   * no matter the width of the screen.
+   */
+  numCols: 4,
+});
