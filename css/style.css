@@ -182,7 +182,38 @@ button {
     text-align: center;
     color: #b6b7b8;
 }
+.grid-wrapper > div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.grid-wrapper > div > img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+}
 
+.grid-wrapper {
+	display: grid;
+	grid-gap: 10px;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-auto-rows: 250px;
+	grid-auto-flow: dense;
+}
+/* добавить класс wide для широкого фото на 2 колонки */
+.grid-wrapper .wide {
+	grid-column: span 2;
+}
+/* добавить класс tall для вертикального фото */
+.grid-wrapper .tall {
+	grid-row: span 2;
+}
+/* добавить класс big для большого фото на 2 колонки и 2 ряда*/
+.grid-wrapper .big {
+	grid-column: span 2;
+	grid-row: span 2;
+}
 
 .footer{
     margin-top: auto;
