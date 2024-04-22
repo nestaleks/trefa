@@ -271,8 +271,58 @@ button {
     margin-bottom: 16px;
     line-height: 1.4;
 }
+/* СТРАНИЦА CONTACT */
 
 
+
+/* СТРАНИЦА SUPPORT */
+.support-1,
+.support-2,
+.support-3{
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.support-1__inner,
+.support-2__inner,
+.support-3__inner{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #32383e;
+}
+.support-1__inner-head,
+.support-2__inner-head,
+.support-3__inner-head{
+    background-color: #515960;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.support-1__inner-title,
+.support-2__inner-title,
+.support-3__inner-title{
+    font-size: 28px;
+    color: #aaaaaa;
+}
+.support-1__inner-box,
+.support-2__inner-box,
+.support-3__inner-box{
+    padding: 15px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.support-1__images,
+.support-2__images,
+.support-3__images{
+    margin-bottom: 15px;
+}
+.support-1__inner-text,
+.support-2__inner-text,
+.support-3__inner-text{
+    color: #aaaaaa;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
 
 
 @media(max-width: 768px) {
@@ -359,5 +409,10 @@ button {
     .basement__inner-title,
     .stories__inner-title{
         font-size: 24px;
-}
+    }
+    .support-1__inner-title,
+    .support-2__inner-title,
+    .support-3__inner-title{
+        font-size: 24px;
+    }
 }
