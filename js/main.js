@@ -48,6 +48,7 @@ icons.forEach (icon => {
 
 
 
+
 $(document).ready(function() {
 	$('.popup__link').magnificPopup({
 		disableOn: 900,
@@ -57,7 +58,52 @@ $(document).ready(function() {
 		preloader: false,
 		fixedContentPos: false
 	});
-	$('.grid-wrapper').magnificPopup({
+	$('.grid').slick({
+		prevArrow: '<button type="button" class="slick-btn slick-prev"><img src="./images/arrow-left.svg" alt="arrow"></button>',
+		nextArrow: '<button type="button" class="slick-btn slick-next"><img src="./images/arrow-right.svg" alt="arrow"></button>',
+	});
+	$(document).ready(function() {
+		$('.grid-wrapper').magnificPopup({
+			delegate: 'a',
+			type: 'image',
+			closeOnContentClick: false,
+			closeBtnInside: false,
+			mainClass: 'mfp-with-zoom mfp-img-mobile',
+			image: {
+				verticalFit: true,
+				titleSrc: function(item) {
+					return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+				}
+			},
+			gallery: {
+				enabled: true
+			},
+			zoom: {
+				enabled: true,
+				duration: 300, // don't foget to change the duration also in CSS
+				opener: function(element) {
+					return element.find('img');
+				}
+			}
+			
+		});
+	});
+});
+
+$(document).ready(function() {
+	$('.popup__link').magnificPopup({
+		disableOn: 900,
+		type: 'iframe',
+		mainClass: 'mfp-fade',
+		removalDelay: 160,
+		preloader: false,
+		fixedContentPos: false
+	});
+	$('.gallery').slick({
+		prevArrow: '<button type="button" class="slick-btn slick-prev"><img src="./images/arrow-left.svg" alt="arrow"></button>',
+		nextArrow: '<button type="button" class="slick-btn slick-next"><img src="./images/arrow-right.svg" alt="arrow"></button>',
+	});
+	$('.grid').magnificPopup({
 		delegate: 'a',
 		type: 'image',
 		tLoading: 'Loading image #%curr%...',
@@ -70,7 +116,7 @@ $(document).ready(function() {
 		image: {
 			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
 			titleSrc: function(item) {
-				return item.el.attr('title') + '<small></small>';
+				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
 			}
 		}
 	});
