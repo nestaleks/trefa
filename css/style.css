@@ -214,8 +214,6 @@ button {
 	grid-column: span 2;
 	grid-row: span 2;
 }
-
-
 .footer{
     margin-top: auto;
     height: 60px;
@@ -225,6 +223,11 @@ button {
     margin-top: 15px;
     text-align: center;
 }
+/* СТРАНИЦА ABOUT */
+.founding{
+    
+}
+
 
 
 
