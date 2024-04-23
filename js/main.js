@@ -47,8 +47,7 @@ icons.forEach (icon => {
 });
 
 
-
-
+// попап на картинки
 $(document).ready(function() {
 	$('.popup__link').magnificPopup({
 		disableOn: 900,
@@ -90,34 +89,48 @@ $(document).ready(function() {
 	});
 });
 
-$(document).ready(function() {
-	$('.popup__link').magnificPopup({
-		disableOn: 900,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
-		fixedContentPos: false
-	});
-	$('.gallery').slick({
-		prevArrow: '<button type="button" class="slick-btn slick-prev"><img src="./images/arrow-left.svg" alt="arrow"></button>',
-		nextArrow: '<button type="button" class="slick-btn slick-next"><img src="./images/arrow-right.svg" alt="arrow"></button>',
-	});
-	$('.grid').magnificPopup({
-		delegate: 'a',
-		type: 'image',
-		tLoading: 'Loading image #%curr%...',
-		mainClass: 'mfp-img-mobile',
-		gallery: {
-			enabled: true,
-			navigateByImgClick: true,
-			preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-		},
-		image: {
-			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-			titleSrc: function(item) {
-				return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
-			}
-		}
-	});
-});
+// слайдер Услуги
+$('.slider__items').slick({
+    dots: true,
+    infinite: true,
+    loop: true,
+    speed: 400,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      ,
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
+  });
