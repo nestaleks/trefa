@@ -45,3 +45,4 @@ icons.forEach (icon => {
     icon.classList.toggle("open");
   });
 });
+
