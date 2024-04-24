@@ -470,6 +470,19 @@ button {
         border-top: 1px solid rgba(0, 0, 0, 0.2);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+    .support-3__cards{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .support-3__crypto{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .crypto-number{
+        font-size: 14px;
+    }
 }
 @media(max-width: 480px) {
     .founding__inner-title,
@@ -481,5 +494,12 @@ button {
     .support-2__inner-title,
     .support-3__inner-title{
         font-size: 24px;
+    }
+    .support-3__cards{
+        margin: 0 auto 20px;
+        width: 220px;
+    }
+    .crypto-number{
+        font-size: 12px;
     }
 }
